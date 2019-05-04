@@ -84,19 +84,19 @@ public class Main {
         sttm.executeUpdate(insert_sql);
     }
     public static void list(Connection conect) throws Exception{
-       try {
+        try {
 
-           Statement statement=conect.createStatement();
-           String listSql="SELECT * FROM User";
-           ResultSet resultSet=statement.executeQuery(listSql);
-           while (resultSet.next()){
-               System.out.println("ID: "+resultSet.getString("id"));
-               System.out.println("UserName: "+resultSet.getString("username"));
-               System.out.println("Email: "+resultSet.getString("email"));
-               System.out.println("Password: "+resultSet.getString("password"));
-               System.out.println("Status: "+resultSet.getString("status"));
-           }
-       }catch (Exception e){}
+            Statement statement=conect.createStatement();
+            String listSql="SELECT * FROM User";
+            ResultSet resultSet=statement.executeQuery(listSql);
+            while (resultSet.next()){
+                System.out.println("ID: "+resultSet.getString("id"));
+                System.out.println("UserName: "+resultSet.getString("username"));
+                System.out.println("Email: "+resultSet.getString("email"));
+                System.out.println("Password: "+resultSet.getString("password"));
+                System.out.println("Status: "+resultSet.getString("status"));
+            }
+        }catch (Exception e){}
     }
     public static void delUser(Connection conect) throws Exception{
         System.out.println("1.Xoa User");
@@ -107,9 +107,9 @@ public class Main {
         if (DelAndDis>0 && DelAndDis<3){
             switch (DelAndDis){
                 case 1:DelUser(conect);
-                break;
+                    break;
                 case 2:Disable(conect);
-                break;
+                    break;
             }
         }
     }
